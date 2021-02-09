@@ -42,11 +42,7 @@ export async function createProject(options) {
     targetDirectory: options.targetDirectory || process.cwd()
   };
 
-  const templateDir = path.resolve(
-    new URL(import.meta.url).pathname,
-    "../../templates",
-    options.template
-  );
+  const templateDir = path.resolve(__dirname, "../templates", options.template);
   options.templateDirectory = templateDir;
 
   try {
